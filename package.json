@@ -1,0 +1,17 @@
+{
+	"name": "experiments",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"astro": "^2.0.14"
+	},
+	"devDependencies": {
+		"@astrojs/deno": "^4.0.2"
+	}
+}

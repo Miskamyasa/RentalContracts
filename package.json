@@ -1,26 +1,33 @@
 {
-	"name": "experiments",
-	"version": "0.0.1",
+	"name": "rental-contracts",
+	"version": "1.0.0",
 	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro check && tsc --noEmit && astro build",
-		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "eslint --ext .ts,.tsx,.astro src"
+		"build": "astro check && tsc --noEmit && astro build",
+		"dev": "astro dev",
+		"lint": "eslint --fix --ext .ts,.tsx,.astro src",
+		"preview": "astro preview",
+		"start": "astro dev",
+		"prepare": "husky install"
 	},
 	"dependencies": {
+		"@astrojs/partytown": "1.0.3",
 		"@astrojs/solid-js": "2.0.2",
-		"astro": "^2.0.14",
-		"solid-js": "^1.4.3"
-	},
-	"devDependencies": {
+		"@astrojs/tailwind": "3.0.1",
+		"@total-typescript/ts-reset": "0.3.7",
 		"@typescript-eslint/eslint-plugin": "5.53.0",
 		"@typescript-eslint/parser": "5.53.0",
+		"astro": "^2.0.17",
 		"eslint": "8.34.0",
+		"eslint-import-resolver-typescript": "3.5.3",
 		"eslint-plugin-astro": "0.23.0",
 		"eslint-plugin-import": "2.27.5",
+		"eslint-plugin-react": "7.32.2",
 		"eslint-plugin-solid": "0.10.0",
+		"pocketbase": "0.12.0",
+		"solid-icons": "1.0.4",
+		"solid-js": "^1.6.11",
+		"tailwindcss": "^3.2.7",
 		"typescript": "4.9.5"
 	}
 }

@@ -1,4 +1,5 @@
 ---
+import SiteFooter from "../components/SiteFooter/SiteFooter.astro"
 import SiteHeader from "../components/SiteHeader/SiteHeader.astro"
 
 
@@ -14,7 +15,9 @@ const {
 
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html
+  class=" bg-amber-50 text-gray-800 p-2 lg:p-3 antialiased h-full overflow-hidden"
+  lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -29,18 +32,15 @@ const {
       content={description}
       name="description" />
   </head>
-  <body>
-    <SiteHeader />
-    <slot name="body" />
-  </body>
-</html>
 
-<style>
-  html {
-    font-size: 100%;
-    @apply bg-amber-50 text-gray-800 p-2 lg:p-3 antialiased;
-  }
-  body {
-    @apply rounded-lg shadow-lg drop-shadow-md bg-gray-50 p-2 lg:p-3;
-  }
-</style>
+  <body class="rounded-lg shadow-lg drop-shadow-md bg-gray-50 px-2 lg:px-3 h-full flex flex-col overflow-y-auto">
+    <SiteHeader />
+    <div class="container flex-grow">
+      <slot name="body" />
+    </div>
+    <SiteFooter />
+  </body>
+
+  <!-- TODO: partytown -->
+	<!-- <script type="text/partytown" src="fancy-analytics.js"></script> -->
+</html>

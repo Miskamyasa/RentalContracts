@@ -157,7 +157,7 @@ rules:
       children: true
   react/jsx-first-prop-new-line:
     - error
-    - multiline
+    - multiline-multiprop
   react/jsx-fragments:
     - error
     - syntax

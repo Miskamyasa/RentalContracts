@@ -1,16 +1,29 @@
 ---
 import RootLayout from "../layouts/Root.astro"
-import {getRecordBySlug} from "../pocketbase/pocketbase"
-
-
-const content = await getRecordBySlug("posts", "/")
 
 ---
-<RootLayout description={content?.description}>
-  <main slot="body">
-    <div set:html={content?.text} />
-  </main>
-
-  <!-- TODO: partytown -->
-	<!-- <script type="text/partytown" src="fancy-analytics.js"></script> -->
+<RootLayout>
+  <Fragment slot="body">
+    <main>
+      <h1>Rental contracts builder home page</h1>
+      <p>
+        Welcome to the Contracts Builder Project, where creating legal rental agreements has never been easier!
+        Our platform offers a convenient and efficient way for individuals to customize pre-made templates
+        to suit their specific needs.
+      </p>
+      <p>
+        With a variety of templates for different types of rental agreements, our platform makes it easy for
+        users to select the one that best suits their requirements. Whether you need a lease agreement for
+        a residential property, a commercial rental agreement, or a vacation rental contract, we've got you covered.
+      </p>
+      <p>
+        What's more, our user-friendly interface and seamless user experience ensure that creating
+        and customizing rental agreements is a breeze. Thanks to modern web development technologies,
+        our platform is designed to make your legal document creation process stress-free and straightforward.
+      </p>
+      <p>
+        Say goodbye to the hassle of legal document creation and join us at the Contracts Builder Project today!
+      </p>
+    </main>
+  </Fragment>
 </RootLayout>

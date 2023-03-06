@@ -6,6 +6,9 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      listStyleType: {
+        square: "square",
+      },
       colors: {
         paper: "#fefaf6",
       },
@@ -27,27 +30,41 @@ module.exports = {
         "h1": {
           "font-size": "1.61rem",
           "font-weight": "700",
+          "margin": `${theme("spacing.2")} 0 ${theme("spacing.4")}`,
         },
         "h2": {
           "font-size": "1.21rem",
           "font-weight": "700",
+          "margin": `${theme("spacing.2")} 0 ${theme("spacing.4")}`,
+        },
+        "main": {
+          "padding": theme("spacing.2"),
+          "margin-bottom": theme("spacing.6"),
+        },
+        "p": {
+          "margin": `${theme("spacing.2")} 0`,
+        },
+        "ul": {
+          "margin": `${theme("spacing.2")} 0 ${theme("spacing.4")}`,
+          "padding-left": theme("spacing.4"),
+          "list-style-type": "square",
         },
       }),
       addComponents({
         ".container": {
-          margin: "0 auto",
-          maxWidth: theme("maxWidth.7xl"),
+          "margin": "0 auto",
+          "max-width": theme("maxWidth.7xl"),
         },
         ".row": {
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: `0 ${theme("spacing.2")}`,
+          "display": "flex",
+          "justify-content": "space-between",
+          "align-items": "center",
+          "padding": `0 ${theme("spacing.2")}`,
           "@screen sm": {
-            padding: `0 ${theme("spacing.6")}`,
+            "padding": `0 ${theme("spacing.6")}`,
           },
           "@screen lg": {
-            padding: `0 ${theme("spacing.8")}`,
+            "padding": `0 ${theme("spacing.8")}`,
           },
         },
       })

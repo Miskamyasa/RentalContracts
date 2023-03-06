@@ -8,6 +8,7 @@ import {defineConfig} from "astro/config"
 // const {NODE_ENV} = process.env
 
 export default defineConfig({
+  // clearScreen: false,
   integrations: [
     solidJs(),
     tailwind(),

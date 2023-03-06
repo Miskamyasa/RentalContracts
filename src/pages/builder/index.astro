@@ -1,0 +1,17 @@
+---
+import RootLayout from "../../layouts/Root.astro"
+
+import Button from "./Button"
+
+
+---
+<RootLayout
+  description={""}
+  title="Builder service">
+  <Fragment slot="body">
+    <main>
+      <h1>Builder</h1>
+      <Button client:only="solid" />
+    </main>
+  </Fragment>
+</RootLayout>

@@ -1,7 +1,5 @@
 import PocketBase, {ListResult, RecordService} from "pocketbase"
 
-import errorHandler from "../helpers/errorHandler"
-
 import type {Collections} from "./types"
 
 
@@ -11,58 +9,19 @@ const pocketbase = pb
 
 export {pocketbase}
 
-function getCollection<T extends keyof Collections>(name: T): RecordService | null {
-  try {
-    return pb.collection(name)
-  } catch (error) {
-    errorHandler(error)
-    return null
-  }
+function getCollection<T extends keyof Collections>(name: T): RecordService {
+  return pb.collection(name)
 }
 
 export async function getRecord<T extends keyof Collections>(
   collection: T,
   id: string,
 ): Promise<Collections[T] | null> {
-  try {
-    const collectionData = getCollection(collection)
-    if (collectionData) {
-      return collectionData.getOne(id)
-    }
-    return null
-  } catch (error) {
-    errorHandler(error)
-    return null
-  }
-}
-
-export async function getRecordBySlug<T extends keyof Collections>(
-  collection: T,
-  slug: string,
-): Promise<Collections[T] | null> {
-  try {
-    const collectionData = getCollection(collection)
-    if (collectionData) {
-      return collectionData.getFirstListItem(`slug="${slug}"`)
-    }
-    return null
-  } catch (error) {
-    errorHandler(error)
-    return null
-  }
+  return getCollection(collection).getOne(id)
 }
 
 export async function getRecords<T extends keyof Collections>(
   collection: T,
 ): Promise<ListResult<Collections[T]> | null> {
-  try {
-    const collectionData = getCollection(collection)
-    if (collectionData) {
-      return collectionData.getList(1, 50)
-    }
-    return null
-  } catch (error) {
-    errorHandler(error)
-    return null
-  }
+  return getCollection(collection).getList(1, 50)
 }

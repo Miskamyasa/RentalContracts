@@ -3,14 +3,10 @@ import RootLayout from "../layouts/Root.astro"
 
 ---
 <RootLayout title="404: Not Found">
-  <main slot="body">
-    <h1>404: Not Found</h1>
-    <p class="mt-4">It's gone 😞</p>
-  </main>
+  <Fragment slot="body">
+    <main slot="body">
+      <h1>404: Not Found</h1>
+      <p class="mt-4">It's gone 😞</p>
+    </main>
+  </Fragment>
 </RootLayout>
-
-<style>
-  main {
-    @apply m-4
-  }
-</style>

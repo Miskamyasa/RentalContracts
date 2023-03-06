@@ -1,5 +1,7 @@
 import PocketBase, {ListResult, RecordService} from "pocketbase"
 
+import errorHandler from "../helpers/errorHandler"
+
 import type {Collections} from "./types"
 
 
@@ -9,12 +11,11 @@ const pocketbase = pb
 
 export {pocketbase}
 
-
 function getCollection<T extends keyof Collections>(name: T): RecordService | null {
   try {
     return pb.collection(name)
   } catch (error) {
-    console.error(error)
+    errorHandler(error)
     return null
   }
 }
@@ -30,6 +31,7 @@ export async function getRecord<T extends keyof Collections>(
     }
     return null
   } catch (error) {
+    errorHandler(error)
     return null
   }
 }
@@ -45,6 +47,7 @@ export async function getRecordBySlug<T extends keyof Collections>(
     }
     return null
   } catch (error) {
+    errorHandler(error)
     return null
   }
 }
@@ -59,6 +62,7 @@ export async function getRecords<T extends keyof Collections>(
     }
     return null
   } catch (error) {
+    errorHandler(error)
     return null
   }
 }

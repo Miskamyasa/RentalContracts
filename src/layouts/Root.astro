@@ -1,4 +1,7 @@
 ---
+import SiteHeader from "../components/SiteHeader/SiteHeader.astro"
+
+
 export interface Props {
   title?: string | undefined
   description?: string | undefined
@@ -8,8 +11,8 @@ const {
   title,
   description = "Build contracts with ease",
 } = Astro.props
----
 
+---
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,30 +30,17 @@ const {
       name="description" />
   </head>
   <body>
+    <SiteHeader />
     <slot name="body" />
   </body>
 </html>
 
 <style>
-  :root {
-  }
-
   html {
     font-size: 100%;
     @apply bg-amber-50 text-gray-800 p-2 lg:p-3 antialiased;
   }
-
   body {
     @apply rounded-lg shadow-lg drop-shadow-md bg-gray-50 p-2 lg:p-3;
-  }
-
-  :global(h1) {
-    font-size: 1.61rem;
-    font-weight: 700;
-  }
-
-  :global(h2) {
-    font-size: 1.21rem;
-    font-weight: 700;
   }
 </style>

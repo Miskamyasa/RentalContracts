@@ -185,8 +185,14 @@ rules:
 
 overrides:
   - files:
-      - "**/*.ts"
-      - "**/*.tsx"
+      - "**/*.js"
+      - "**/*.cjs"
+      - "**/*.mjs"
+    rules:
+      "@typescript-eslint/explicit-function-return-type": "off"
+      "@typescript-eslint/no-unsafe-call": "off"
+      "@typescript-eslint/no-unsafe-assignment": "off"
+      "@typescript-eslint/restrict-template-expressions": "off"
   - files:
       - "*.astro"
     parser: "astro-eslint-parser"

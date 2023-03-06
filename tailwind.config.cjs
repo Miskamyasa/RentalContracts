@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -18,5 +21,36 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({addComponents, addBase, theme}) {
+      addBase({
+        "h1": {
+          "font-size": "1.61rem",
+          "font-weight": "700",
+        },
+        "h2": {
+          "font-size": "1.21rem",
+          "font-weight": "700",
+        },
+      }),
+      addComponents({
+        ".container": {
+          margin: "0 auto",
+          maxWidth: theme("maxWidth.7xl"),
+        },
+        ".row": {
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: `0 ${theme("spacing.2")}`,
+          "@screen sm": {
+            padding: `0 ${theme("spacing.6")}`,
+          },
+          "@screen lg": {
+            padding: `0 ${theme("spacing.8")}`,
+          },
+        },
+      })
+    },
+  ],
 }

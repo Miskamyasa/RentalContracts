@@ -38,8 +38,7 @@ module.exports = {
           "margin": `${theme("spacing.2")} 0 ${theme("spacing.4")}`,
         },
         "main": {
-          "padding": theme("spacing.2"),
-          "margin-bottom": theme("spacing.6"),
+          "margin-bottom": theme("spacing.2"),
         },
         "p": {
           "margin": `${theme("spacing.2")} 0`,

@@ -1,6 +1,6 @@
 import type {JSXElement} from "solid-js"
 
-import {loaderSignal, setLoading} from "../../components/SiteHeader/HeaderLoader"
+import {loaderSignal, setLoading} from "../../store/headerLoader"
 
 
 export default function Button(): JSXElement {

@@ -1,20 +1,9 @@
-import {createSignal, JSXElement} from "solid-js"
+import type {JSXElement} from "solid-js"
 
 import {CgSpinnerTwo} from "solid-icons/cg"
 
+import {loaderSignal} from "../../store/headerLoader"
 
-type LoaderState = Record<string, boolean>
-
-export const [loaderSignal, setSignal] = createSignal<LoaderState>({})
-
-export function setLoading(key: string, value: boolean): void {
-  setSignal((state: LoaderState): LoaderState => {
-    return {
-      ...state,
-      [key]: value,
-    }
-  })
-}
 
 export default function HeaderLoader(): JSXElement {
   return (

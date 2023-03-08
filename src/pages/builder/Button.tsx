@@ -5,7 +5,7 @@ import {loaderSignal, setLoading} from "../../store/headerLoader"
 
 export default function Button(): JSXElement {
   const handleClick = (): void => {
-    setLoading("home", !loaderSignal().home)
+    setLoading("home", !loaderSignal().has("home"))
   }
 
   return (
@@ -16,7 +16,7 @@ export default function Button(): JSXElement {
         + "active:opacity-90"}
       type="button"
       onClick={handleClick}>
-      Loading: {loaderSignal().home ? "true" : "false"}
+      Loading: {loaderSignal().has("home") ? "true" : "false"}
     </button>
   )
 }

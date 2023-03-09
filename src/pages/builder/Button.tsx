@@ -1,10 +1,8 @@
-import type {JSXElement} from "solid-js"
-
 import {loaderSignal, setLoading} from "../../store/headerLoader"
 
 
-export default function Button(): JSXElement {
-  const handleClick = (): void => {
+export default function Button() {
+  const handleClick = () => {
     setLoading("home", !loaderSignal().has("home"))
   }
 

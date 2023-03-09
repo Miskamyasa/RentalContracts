@@ -1,17 +1,15 @@
 import {createRoot, createSignal} from "solid-js"
 
 
-type LoaderState = Set<string>
-
 const {signal: loaderSignal, setSignal} = createRoot(() => {
-  const [signal, setSignal] = createSignal<LoaderState>(new Set())
+  const [signal, setSignal] = createSignal<Set<string>>(new Set())
   return {signal, setSignal} as const
 })
 
 export {loaderSignal}
 
-export function setLoading(key: string, value: boolean): void {
-  setSignal((state: LoaderState): LoaderState => {
+export function setLoading(key: string, value: boolean) {
+  setSignal(state => {
     if (value) {
       !state.has(key) && state.add(key)
     } else {

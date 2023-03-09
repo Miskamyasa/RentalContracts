@@ -1,11 +1,11 @@
-import {JSXElement, Show} from "solid-js"
+import {Show} from "solid-js"
 
 import {CgSpinnerTwo} from "solid-icons/cg"
 
 import {loaderSignal} from "../../store/headerLoader"
 
 
-export default function HeaderLoader(): JSXElement {
+export default function HeaderLoader() {
   return (
     <Show when={loaderSignal().size > 0}>
       <CgSpinnerTwo

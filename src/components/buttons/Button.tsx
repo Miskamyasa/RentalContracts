@@ -1,4 +1,4 @@
-import {loaderSignal, setLoading} from "../../store/headerLoader"
+import {loaderSignal, setLoading} from "../../store/loading"
 
 
 export default function Button() {

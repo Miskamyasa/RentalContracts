@@ -9,14 +9,13 @@ import {defineConfig} from "astro/config"
 
 // https://astro.build/config
 export default defineConfig({
-  // clearScreen: false,
   integrations: [
     solidJs(),
     tailwind(),
-  // TODO: partytown is not working
-  // partytown({
-  //   config: {debug: NODE_ENV === "development"},
-  // }),
+    // TODO: partytown is not working
+    // partytown({
+    //   config: {debug: NODE_ENV === "development"},
+    // }),
   ],
   // output: "server",
   // adapter: node({

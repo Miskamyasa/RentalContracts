@@ -1,9 +1,7 @@
 ---
-/* eslint-disable max-len */
-import {Icon} from "astro-icon"
-
-import Logo from "../Logo/Logo.astro"
-import SiteMenu from "../SiteMenu/SiteMenu.astro"
+import Auth from "../auth/Auth"
+import Logo from "../logo/Logo.astro"
+import SiteMenu from "../site-menu/SiteMenu.astro"
 
 import HeaderLoader from "./HeaderLoader"
 
@@ -13,12 +11,9 @@ import HeaderLoader from "./HeaderLoader"
   <header class="relative top-2 z-20 container row overflow-hidden h-14 rounded-lg shadow-md bg-sky-600 text-sky-50">
     <Logo />
     <SiteMenu />
-
     <div class="flex gap-3">
       <HeaderLoader client:load />
-      <Icon
-        name="ri:login-circle-line"
-        size="24" />
+      <Auth client:idle />
     </div>
   </header>
 </div>

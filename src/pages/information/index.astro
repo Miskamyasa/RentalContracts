@@ -2,13 +2,13 @@
 
 import {getCollection} from "astro:content"
 
-import RootLayout from "../../layouts/Root.astro"
-import {pocketbase} from "../../pocketbase/pocketbase"
+import RootLayout from "../../components/layout/Root.astro"
+// import {pocketbase} from "../../pocketbase/pocketbase"
 
 
-const pb = pocketbase.authStore
+// const pb = pocketbase.authStore
 
-console.log({pb})
+// console.log({pb})
 
 const pages = await getCollection("pages", ({data}) => {
   return data.isDraft !== true

@@ -19,6 +19,9 @@ dependencies:
   '@kobalte/core':
     specifier: 0.7.2
     version: 0.7.2(solid-js@1.6.12)
+  '@kobalte/tailwindcss':
+    specifier: 0.5.0
+    version: 0.5.0(tailwindcss@3.2.7)
   '@total-typescript/ts-reset':
     specifier: 0.3.7
     version: 0.3.7
@@ -771,6 +774,14 @@ packages:
       '@internationalized/string': 3.1.0
       '@kobalte/utils': 0.6.1(solid-js@1.6.12)
       solid-js: 1.6.12
+    dev: false
+
+  /@kobalte/tailwindcss@0.5.0(tailwindcss@3.2.7):
+    resolution: {integrity: sha512-qP2C6mS4FcINHdUBFhNHe2QPvdSvbpDW30b0BgtPVu9F1H1nud2j3DJBezXMDE0N72mrxtvmLRyel9eIUCPVVQ==}
+    peerDependencies:
+      tailwindcss: ^3.2.7
+    dependencies:
+      tailwindcss: 3.2.7
     dev: false
 
   /@kobalte/utils@0.6.1(solid-js@1.6.12):

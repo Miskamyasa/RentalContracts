@@ -1,7 +1,7 @@
 ---
-import Favicon from "../components/Favicon/Favicon.astro"
-import SiteFooter from "../components/SiteFooter/SiteFooter.astro"
-import SiteHeader from "../components/SiteHeader/SiteHeader.astro"
+import Favicon from "../favicon/Favicon.astro"
+import SiteFooter from "../site-footer/SiteFooter.astro"
+import SiteHeader from "../site-header/SiteHeader.astro"
 
 
 export interface Props {
@@ -16,9 +16,7 @@ const {
 
 ---
 <!DOCTYPE html>
-<html
-  class=" bg-amber-50 text-gray-800 p-2 lg:p-3 antialiased h-full overflow-hidden"
-  lang="en">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -32,16 +30,22 @@ const {
     <meta
       content={description}
       name="description" />
+    <meta
+      content={Astro.generator}
+      name="generator" />
     <Favicon />
   </head>
 
-  <body class="rounded-lg shadow-lg drop-shadow-md bg-gray-50 px-2 lg:px-3 h-full flex flex-col overflow-y-auto">
-    <SiteHeader />
-    <div class="container flex-grow">
-      <slot name="body" />
+  <body class="h-screen w-screen overflow-hidden">
+    <div class="bg-amber-50 text-gray-800 p-2 lg:p-3 antialiased h-full overflow-hidden">
+      <div class="rounded-lg shadow-lg drop-shadow-md bg-gray-50 px-2 lg:px-3 h-full flex flex-col overflow-y-auto">
+        <SiteHeader />
+        <div class="container flex-grow">
+          <slot name="body" />
+        </div>
+        <SiteFooter />
+      </div>
     </div>
-    <SiteFooter />
-
     <!-- TODO: partytown -->
     <!-- <script type="text/partytown" src="fancy-analytics.js"></script> -->
   </body>

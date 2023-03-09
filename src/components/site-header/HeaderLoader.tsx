@@ -2,7 +2,7 @@ import {Show} from "solid-js"
 
 import {CgSpinnerTwo} from "solid-icons/cg"
 
-import {loaderSignal} from "../../store/headerLoader"
+import {loaderSignal} from "../../store/loading"
 
 
 export default function HeaderLoader() {

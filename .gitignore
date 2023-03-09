@@ -13,3 +13,7 @@ yarn-error.log
 
 # builds
 dist/
+
+# astro meta / md content
+.astro
+.obsidian

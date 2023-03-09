@@ -1,4 +1,5 @@
 ---
+import Favicon from "../components/Favicon/Favicon.astro"
 import SiteFooter from "../components/SiteFooter/SiteFooter.astro"
 import SiteHeader from "../components/SiteHeader/SiteHeader.astro"
 
@@ -31,6 +32,7 @@ const {
     <meta
       content={description}
       name="description" />
+    <Favicon />
   </head>
 
   <body class="rounded-lg shadow-lg drop-shadow-md bg-gray-50 px-2 lg:px-3 h-full flex flex-col overflow-y-auto">

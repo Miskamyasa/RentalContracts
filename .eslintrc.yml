@@ -22,7 +22,6 @@ extends:
   - plugin:import/recommended
   - plugin:import/typescript
   - plugin:astro/recommended
-  - plugin:solid/typescript
 
 plugins:
   - react
@@ -35,14 +34,16 @@ settings:
       - ".d.ts"
   import/resolver:
     typescript:
+      project:
+        - "./tsconfig.json"
       alwaysTryTypes: true
   import/ignore:
     - ".css"
-
   react:
     version: "17.0.2"
 
 rules:
+  "@typescript-eslint/triple-slash-reference": "off"
   "@typescript-eslint/explicit-function-return-type": "error"
   "@typescript-eslint/indent":
     - error
@@ -111,6 +112,12 @@ rules:
   import/newline-after-import:
     - error
     - count: 2
+  import/no-unresolved:
+    - error
+    - commonjs: true
+      caseSensitive: true
+      ignore:
+        - "astro:content"
   import/order:
     - error
     - pathGroups:
@@ -182,7 +189,6 @@ rules:
       logical: ignore
       prop: ignore
 
-
 overrides:
   - files:
       - "**/*.js"
@@ -193,6 +199,10 @@ overrides:
       "@typescript-eslint/no-unsafe-call": "off"
       "@typescript-eslint/no-unsafe-assignment": "off"
       "@typescript-eslint/restrict-template-expressions": "off"
+  - files:
+      - "**/*.tsx"
+    extends:
+      - plugin:solid/typescript
   - files:
       - "*.astro"
     parser: "astro-eslint-parser"

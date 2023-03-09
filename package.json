@@ -2,7 +2,6 @@
 	"name": "rental-contracts",
 	"version": "1.0.0",
 	"scripts": {
-		"astro": "astro",
 		"build": "astro check && tsc --noEmit && astro build",
 		"dev": "astro dev --verbose",
 		"lint": "eslint --fix --ext .ts,.tsx,.astro src",
@@ -11,6 +10,7 @@
 		"prepare": "husky install"
 	},
 	"dependencies": {
+		"@astrojs/node": "5.1.0",
 		"@astrojs/partytown": "1.0.3",
 		"@astrojs/solid-js": "2.0.2",
 		"@astrojs/tailwind": "3.0.1",

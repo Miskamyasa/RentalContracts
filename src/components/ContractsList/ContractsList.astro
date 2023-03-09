@@ -1,49 +1,62 @@
 ---
----
+import {getRecords} from "../../pocketbase/pocketbase"
 
-<table class="bg-white shadow-xl rounded-lg w-full align-top border-gray-200 text-slate-600 whitespace-nowrap">
-  <thead class="align-bottom">
-    <tr>
-      <th class="px-4 py-3 text-left uppercase border-b text-slate-400">Author</th>
-      <th class="px-4 py-3 text-left uppercase border-b text-slate-400">Sign Date</th>
-      <th class="px-4 py-3 text-center uppercase border-b text-slate-400">Created</th>
-      <th class="px-4 py-3 text-center uppercase border-b text-slate-400">Payed</th>
-      <th class="border-b"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="p-4 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-        <div class="flex py-1">
-          <div class="flex flex-col justify-center">
-            <h6 class="mb-0 leading-normal text-sm">John Michael</h6>
-            <p class="mb-0 leading-tight text-xs text-slate-400">
-              john@creative-tim.com
-            </p>
+
+const contracts = await getRecords("contracts")
+
+console.log({
+  contracts,
+})
+---
+<div>
+  <pre>
+    {JSON.stringify(contracts, null, 2)}
+  </pre>
+
+  <table class="bg-white shadow-xl rounded-lg w-full align-top border-gray-200 text-slate-600 whitespace-nowrap">
+    <thead class="align-bottom">
+      <tr>
+        <th class="px-4 py-3 text-left uppercase border-b text-slate-400">Author</th>
+        <th class="px-4 py-3 text-left uppercase border-b text-slate-400">Sign Date</th>
+        <th class="px-4 py-3 text-center uppercase border-b text-slate-400">Created</th>
+        <th class="px-4 py-3 text-center uppercase border-b text-slate-400">Payed</th>
+        <th class="border-b"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="p-4 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+          <div class="flex py-1">
+            <div class="flex flex-col justify-center">
+              <h6 class="mb-0 leading-normal text-sm">John Michael</h6>
+              <p class="mb-0 leading-tight text-xs text-slate-400">
+                john@creative-tim.com
+              </p>
+            </div>
           </div>
-        </div>
-      </td>
-      <td class="p-4 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-        <p class="mb-0 font-semibold leading-tight text-xs">Manager</p>
-        <p class="mb-0 leading-tight text-xs text-slate-400">Organization</p>
-      </td>
-      <td class="p-4 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-        <span class="font-semibold leading-tight text-xs text-slate-400">23/04/18</span>
-      </td>
-      <td class="p-4 leading-normal text-center align-middle bg-transparent border-b text-sm">
-        <div class="inline-block bg-gradient-to-tl from-emerald-500 to-teal-400 px-3 text-xs rounded-sm py-2">
-          <span class="uppercase text-white">
-            No
-          </span>
-        </div>
-      </td>
-      <td class="p-4 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-        <a
-          class="font-semibold leading-tight text-xs text-slate-400"
-          href="javascript:;">
-          Edit
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        </td>
+        <td class="p-4 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+          <p class="mb-0 font-semibold leading-tight text-xs">Manager</p>
+          <p class="mb-0 leading-tight text-xs text-slate-400">Organization</p>
+        </td>
+        <td class="p-4 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+          <span class="font-semibold leading-tight text-xs text-slate-400">23/04/18</span>
+        </td>
+        <td class="p-4 leading-normal text-center align-middle bg-transparent border-b text-sm">
+          <div class="inline-block bg-gradient-to-tl from-emerald-500 to-teal-400 px-3 text-xs rounded-sm py-2">
+            <span class="uppercase text-white">
+              No
+            </span>
+          </div>
+        </td>
+        <td class="p-4 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+          <a
+            class="font-semibold leading-tight text-xs text-slate-400"
+            href="javascript:;">
+            Edit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

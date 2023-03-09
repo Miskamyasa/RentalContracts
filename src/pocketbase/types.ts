@@ -1,16 +1,16 @@
-export interface Post {
+export interface Contract {
   id: string
   collectionId: string
   collectionName: string
   created: string
   updated: string
-  title: string
-  slug: string
-  text: string
-  image: string
-  description: string
+  landlord_id: string
+  rental_property_id: string
+  payed: boolean
+  sign_date: string
+  author_id: string
 }
 
 export interface Collections {
-  posts: Post
+  contracts: Contract
 }

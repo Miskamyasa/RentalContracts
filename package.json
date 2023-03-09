@@ -14,10 +14,11 @@
 		"@astrojs/partytown": "1.0.3",
 		"@astrojs/solid-js": "2.0.2",
 		"@astrojs/tailwind": "3.0.1",
+		"@babel/core": "7.21.0",
 		"@total-typescript/ts-reset": "0.3.7",
 		"@typescript-eslint/eslint-plugin": "5.53.0",
 		"@typescript-eslint/parser": "5.53.0",
-		"astro": "^2.0.17",
+		"astro": "^2.1.2",
 		"astro-icon": "0.8.0",
 		"eslint": "8.34.0",
 		"eslint-import-resolver-typescript": "3.5.3",
@@ -27,7 +28,7 @@
 		"eslint-plugin-solid": "0.10.0",
 		"pocketbase": "0.12.0",
 		"solid-icons": "1.0.4",
-		"solid-js": "^1.6.11",
+		"solid-js": "^1.6.12",
 		"tailwindcss": "^3.2.7",
 		"typescript": "4.9.5"
 	}

@@ -43,8 +43,7 @@ settings:
     version: "17.0.2"
 
 rules:
-  "@typescript-eslint/triple-slash-reference": "off"
-  "@typescript-eslint/explicit-function-return-type": "error"
+  "@typescript-eslint/triple-slash-reference": off
   "@typescript-eslint/indent":
     - error
     - 2
@@ -125,7 +124,7 @@ rules:
           group: external
           position: before
       pathGroupsExcludedImportTypes:
-        - react
+        - solid-js
       groups:
         - builtin
         - external

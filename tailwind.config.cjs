@@ -46,6 +46,9 @@ module.exports = {
     require("@kobalte/tailwindcss"),
     function ({addComponents, addBase, theme}) {
       addBase({
+        body: {
+          color: theme("colors.slate.700"),
+        },
         "h1": {
           "font-size": "1.61rem",
           "font-weight": "700",
@@ -69,6 +72,38 @@ module.exports = {
         },
       }),
       addComponents({
+        ".outlined": {
+          // outline-none focus-visible:outline-sky-600 focus-visible:outline-offset-2
+          "outline": "none",
+          "&:focus-visible": {
+            "outline": `2px solid ${theme("colors.sky.600")}`,
+            "outline-offset": "2px",
+          },
+        },
+        ".btn": {
+          "display": "inline-flex",
+          "justify-content": "center",
+          "align-items": "center",
+          "height": theme("spacing.10"),
+          "width": "auto",
+          "border-radius": theme("borderRadius.lg"),
+          "padding": `${theme("spacing.2")} ${theme("spacing.4")}`,
+          "background-color": theme("colors.sky.600"),
+          "color": theme("colors.sky.50"),
+          "line-height": "0",
+          "transition": "250ms background-color",
+          "outline": "none",
+          "&:hover": {
+            "background-color": theme("colors.sky.700"),
+          },
+          "&:active": {
+            "background-color": theme("colors.sky.700"),
+          },
+          "&:focus-visible": {
+            "outline": `2px solid ${theme("colors.sky.600")}`,
+            "outline-offset": "2px",
+          },
+        },
         ".overlay": {
           "position": "fixed",
           "inset": "0",

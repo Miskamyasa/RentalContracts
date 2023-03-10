@@ -1,8 +1,6 @@
 ---
-import Button from "../../components/buttons/Button"
 import ContractsList from "../../components/contracts-list/ContractsList.astro"
 import RootLayout from "../../components/layout/Root.astro"
-
 
 ---
 <RootLayout
@@ -11,9 +9,6 @@ import RootLayout from "../../components/layout/Root.astro"
   <Fragment slot="body">
     <main>
       <h1>Builder</h1>
-      <div class="mb-6">
-        <Button client:idle />
-      </div>
       <ContractsList />
     </main>
   </Fragment>

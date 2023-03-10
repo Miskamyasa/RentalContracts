@@ -11,6 +11,19 @@ export interface Contract {
   author_id: string
 }
 
+export interface User {
+  id: string
+  collectionId: string
+  collectionName: string
+  username: string
+  verified: boolean
+  emailVisibility: boolean
+  email: string
+  created: string
+  updated: string
+}
+
 export interface Collections {
   contracts: Contract
+  users: User
 }
